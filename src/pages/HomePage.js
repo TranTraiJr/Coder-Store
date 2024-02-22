@@ -22,10 +22,13 @@ function HomePage() {
     sortBy: "featured",
     searchQuery: "",
   };
+  const { reset } = useForm({
+    defaultValues,
+  });
   const methods = useForm({
     defaultValues,
   });
-  const { watch, reset } = methods;
+  const { watch } = methods;
   const filters = watch();
   const filterProducts = applyFilter(products, filters);
 
